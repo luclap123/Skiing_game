@@ -8,7 +8,6 @@ public class Detection : MonoBehaviour
     [SerializeField] ParticleSystem crashEffect;
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
-            // Debug.Log("you lose");
             crashEffect.Play();
             Invoke("ReloadScence", timeReloadScence);
         }
