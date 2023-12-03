@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class Detection : MonoBehaviour
 {
     [SerializeField] float timeReloadScence = 2f;
-    [SerializeField] ParticleSystem particleSystem;
+    [SerializeField] ParticleSystem crashEffect;
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
             // Debug.Log("you lose");
-            particleSystem.Play();
+            crashEffect.Play();
             Invoke("ReloadScence", timeReloadScence);
         }
     }
