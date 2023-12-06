@@ -9,6 +9,8 @@ public class Detection : MonoBehaviour
     [SerializeField] AudioClip sound;
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
+            // GetComponent<Controller>().disableControl();
+            FindObjectOfType<Controller>().disableControl();
             crashEffect.Play();
             GetComponent<AudioSource>().PlayOneShot(sound);
             Invoke("ReloadScence", timeReloadScence);

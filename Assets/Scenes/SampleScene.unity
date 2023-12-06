@@ -20236,7 +20236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f384f72c5d1aeb043a6d933f6d196cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torqueAmount: 10
+  torqueAmount: 20
   surfaceEffector2D: {fileID: 0}
   boostSpeed: 35
   normalSpeed: 20

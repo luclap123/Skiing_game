@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour
     [SerializeField] SurfaceEffector2D surfaceEffector2D;
     [SerializeField] float boostSpeed = 35f;
     [SerializeField] float normalSpeed = 20f;
-
+    bool canMove = true;
     Rigidbody2D rigidbody2D;
     // Start is called before the first frame update
     void Start()
@@ -21,8 +21,16 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotatePlayer();
-        SpeedPlayer();
+        if (canMove)
+        {
+            RotatePlayer();
+            SpeedPlayer();
+        }
+    }
+
+    public void disableControl()
+    {
+        canMove = false;
     }
 
     private void SpeedPlayer()
@@ -30,7 +38,8 @@ public class Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             surfaceEffector2D.speed = boostSpeed;
-        } else 
+        }
+        else
         {
             surfaceEffector2D.speed = normalSpeed;
 
