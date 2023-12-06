@@ -6,9 +6,11 @@ public class Detection : MonoBehaviour
 {
     [SerializeField] float timeReloadScence = 2f;
     [SerializeField] ParticleSystem crashEffect;
+    [SerializeField] AudioClip sound;
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
             crashEffect.Play();
+            GetComponent<AudioSource>().PlayOneShot(sound);
             Invoke("ReloadScence", timeReloadScence);
         }
     }
